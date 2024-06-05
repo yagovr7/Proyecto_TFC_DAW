@@ -165,17 +165,17 @@ class Conexion extends PDO
         $stmt->bindParam(1, $id_Alumno, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            return $stmt->fetch(PDO::FETCH_OBJ);
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         } else {
             return false;
         }
     }
 
-    function eliminarER($id_Alumno)
+    function eliminarER($id)
     {
-        $sql = 'DELETE FROM er WHERE id_Alumno = ?';
+        $sql = 'DELETE FROM er WHERE id_ER = ?';
         $stmt = $this->prepare($sql);
-        $stmt->bindParam(1, $id_Alumno, PDO::PARAM_INT);
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             return true;

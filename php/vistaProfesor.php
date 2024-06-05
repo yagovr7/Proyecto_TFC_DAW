@@ -93,18 +93,24 @@
         }
         ?>
     </section>
-
-    <section id="er">
-        <?php
-        echo "<h2>Entidad Realación</h2>";
-        if ($imagen = (new Conexion)->verER($_GET["id_Alumno"])) {
-            $nombre = $imagen->id_Alumno;
-            $nombreImagen = $imagen->imagen;
-            echo "<figure id=\"ER\"><img src=\"ER/".$imagen->imagen."\" alt=\"E-R\"></figure>";
-        }else{
-            echo "<h4>Sin entidad relación</h4>";
+    
+    <section id="contenidoER">
+    <?php
+    echo "<h2>ER & Mockup</h2>";
+    if ($imagen = (new Conexion)->verER($_GET["id_Alumno"])) {
+        foreach ($imagen as $img) {
+            $id = $img->id_ER;
+            $nombre = $img->id_Alumno;
+            $nombreImagen = $img->imagen;
+            $cadena = $nombreImagen = $img->imagen;;
+            $resultado = strstr($cadena, '.', true);
+            echo "<dialog id=\"$resultado\">";
+            echo "<figure id=\"ER\"><button onclick=\"window.$resultado.close()\" class=\"boton2\">Close</button><a href=\"php/modificador.php?eliminarER=$id&imagen=$nombreImagen\" id=\"eliminarER\"><i class=\"bi bi-trash\"></i></a>
+            <img src=\"ER/" . $img->imagen . "\" alt=\"E-R\">
+            </figure></dialog>";
+            echo "<button onclick=\"window.$resultado.show()\" class=\"boton\"><img src=\"ER/$img->imagen\"></button>";
         }
-        ?>
-    </section>
-
+        
+    }   
+    ?>
 </section>

@@ -509,6 +509,9 @@ body #main-dashboard #contenidoTecnologias .tablarecursos td {
   color: #E6EDF3;
   font-size: 1.1rem;
 }
+body #main-dashboard #contenidoTecnologias .tablarecursos td:nth-child(1) {
+  text-align: center;
+}
 body #main-dashboard #contenidoTecnologias .tablarecursos th:not(:nth-child(1)),
 body #main-dashboard #contenidoTecnologias .tablarecursos td:not(:nth-child(1)) {
   text-align: center;
@@ -519,16 +522,77 @@ body #main-dashboard #contenidoTecnologias .tablarecursos td {
   border-bottom: 1px solid #30363d;
   border-right: 1px solid #30363d;
 }
-body #main-dashboard #contenidoER {
+body #main-dashboard #formUpload {
   width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+body #main-dashboard #formUpload label {
+  margin: 0;
+}
+body #main-dashboard #formUpload i {
+  font-size: 4rem;
+}
+body #main-dashboard #formUpload input[type=submit] {
+  background-color: #238636;
+  padding: 0.5rem;
+  width: auto;
+}
+body #main-dashboard #contenidoER {
+  width: 60%;
   height: 100%;
   color: #E6EDF3;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
   flex-grow: 1;
-  gap: 1rem;
+  gap: 2rem;
+}
+body #main-dashboard #contenidoER .boton {
+  width: 200px;
+  height: 200px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+body #main-dashboard #contenidoER .boton img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body #main-dashboard #contenidoER dialog {
+  width: 70%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 15%;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: #161B22;
+}
+body #main-dashboard #contenidoER dialog button {
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background-color: #238636;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  position: relative;
+  float: left;
+  margin: 0.5rem;
+  outline: none;
+}
+body #main-dashboard #contenidoER dialog i {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  float: left;
 }
 body #main-dashboard #contenidoER h2 {
   width: 100%;
@@ -559,25 +623,6 @@ body #main-dashboard #contenidoER #ER img {
   overflow: hidden;
   border: 5px solid #30363d;
   filter: brightness(0.9);
-}
-body #main-dashboard #contenidoER form {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-body #main-dashboard #contenidoER form label {
-  margin: 0;
-}
-body #main-dashboard #contenidoER form i {
-  font-size: 7rem;
-}
-body #main-dashboard #contenidoER form input[type=submit] {
-  background-color: #238636;
-  padding: 0.5rem;
 }
 body #main-dashboard #repositorio {
   width: 100%;

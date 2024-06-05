@@ -123,7 +123,8 @@ INSERT INTO `descripcion` (`id_Alumno`, `titulo`, `descripcion`) VALUES
 --
 
 CREATE TABLE `er` (
-  `id_Alumno` int(11) NOT NULL PRIMARY KEY,
+  `id_ER` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id_Alumno` int(11) NOT NULL,
   `imagen` varchar(25) NOT NULL,
   FOREIGN KEY (id_Alumno) REFERENCES usuarios(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -132,8 +133,8 @@ CREATE TABLE `er` (
 -- Dumping data for table `er`
 --
 
-INSERT INTO `er` (`id_Alumno`, `imagen`) VALUES
-(5, 'yvr@gmail.com.jpg');
+INSERT INTO `er` (`id_ER`, `id_Alumno`, `imagen`) VALUES
+(1, 5, '1yvr@gmail.com.jpg');
 
 -- --------------------------------------------------------
 

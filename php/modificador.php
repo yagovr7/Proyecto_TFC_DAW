@@ -32,13 +32,13 @@ if (isset($_POST["subirdescripcion"])) {
         $extension = end($partes);
         $nombre_final = $_SESSION["usuario"]->correo . "." . $extension;
         // Mover el archivo a su ubicación final
-        $ruta_final = $directorio_destino . $nombre_final;
+        $ruta_final = $directorio_destino . $nombre_archivo;
         move_uploaded_file($ruta_temporal, $ruta_final);
-        (new Conexion)->subirER($_SESSION["usuario"]->id, $nombre_final);
+        (new Conexion)->subirER($_SESSION["usuario"]->id, $nombre_archivo);
     }
     header("Location: ../dashboard.php?er");
 } else if (isset($_GET["eliminarER"])) {
-    (new Conexion)->eliminarER($_GET["eliminarER"]);
+    (new Conexion)->eliminarER($_GET["eliminarER"], $_GET["imagen"]);
     $imagen = $_GET["imagen"];
     unlink("../ER/$imagen");
     header("Location: ../dashboard.php?er");
